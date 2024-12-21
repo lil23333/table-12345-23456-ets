@@ -1,0 +1,23 @@
+let table = document.querySelector('table');
+
+for (let i = 0; i < 5; i++) {
+    let tr = document.createElement('tr');
+    for (let j = 0; j < 5; j++) {
+        let td = document.createElement('td');
+        tr.appendChild(td);
+        }
+        table.appendChild(tr);
+        }
+
+let trs = document.querySelectorAll('tr');
+let tds = document.querySelectorAll('td');
+
+for (let i = 0; i < trs.length; i++) {
+    trs[i].dataset.id = Math.abs(i - trs.length);
+    let children = trs[i].childNodes;
+    let dataId = trs[i].dataset.id;
+    for (let j = 0; j < children.length; j++) {
+    children[j].textContent = dataId;
+    dataId++
+}
+}
